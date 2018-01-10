@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+{% load staticfiles %}
+
+{% block about %}
+<div class="clearfix">
+    <a class="btn btn-outline-dark float-left" href="/">&larr; Вернуться на главную </a>
+</div>
+<p style="text-align:center"><img src="{% static "aza.jpg" %}" class="img-fluid"></p>
+    <p style="text-align:center"><span style="font-family:'Open Sans';font-style: normal;font-weight: 300;,sans-serif">
+    Здравствуйте! Это мой сайт. :) Он создан на Python/Django, с использованием Bootstrap стилей.
+    Целью его создания было проверить, смогу ли я, получится ли у меня хоть что-то...
+    Около месяца назад я стал одержим идеей стать программистом.
+    Я понял, что последние десять лет занимался не тем.
+        Пока еще мое будущее в этой сфере туманно, но меня радует, что я хоть что-то могу. Спасибо, если заглянули. ;)</span></p>
+{% endblock %}

@@ -9,6 +9,7 @@ from article.forms import CommentForm
 from django.template.context_processors import csrf
 from django.contrib import auth
 
+
 # Create your views here.
 
 def basic_one(request):
@@ -27,18 +28,20 @@ def template_three_simple(request):
     return render_to_response('myview.html', {'name': view})
 
 def about(request):
-    view = "template_three"
-    return render_to_response('about.html', {'name': view})
+    return render_to_response('about.html')
+
+def azamaza(request):
+    return render_to_response('azamaza.html')
 
 def articles(request, page_number=1):
-    all_articles = Article.objects.all()
+    all_articles = Article.objects.all().order_by('-article_date')
     current_page = Paginator(all_articles, 2)
     return render_to_response('articles.html', {'articles': current_page.page(page_number), 'username': auth.get_user(request).username})
 
 
 def article(request, page_comments_number=1, article_id=1):
     comment_form = CommentForm
-    all_comments = Comments.objects.all()
+    all_comments = Comments.objects.all().order_by('-comments_date')
     args = {}
     args.update(csrf(request))
     args['article'] = Article.objects.get(id=article_id)

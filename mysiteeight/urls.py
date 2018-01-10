@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include,re_path
-from article.views import about
+from article.views import about,azamaza
 
 
 urlpatterns = [
@@ -25,5 +25,5 @@ urlpatterns = [
     path('', include('article.urls')),
     path('auth/', include('loginsys.urls')),
     path('about/', about),
-
+    path('azamaza/', azamaza),
 ]
