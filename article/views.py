@@ -26,6 +26,10 @@ def template_three_simple(request):
     view = "template_three"
     return render_to_response('myview.html', {'name': view})
 
+def about(request):
+    view = "template_three"
+    return render_to_response('about.html', {'name': view})
+
 def articles(request, page_number=1):
     all_articles = Article.objects.all()
     current_page = Paginator(all_articles, 2)

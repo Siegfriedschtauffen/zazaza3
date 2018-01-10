@@ -15,6 +15,7 @@ class Article(models.Model):
     article_likes = models.IntegerField(default=0)
     article_image = models.ImageField(null=True, blank=True, upload_to="images/", verbose_name= 'Изображение')
 
+
     def __unicode__(self):
         return self.article_title
 
